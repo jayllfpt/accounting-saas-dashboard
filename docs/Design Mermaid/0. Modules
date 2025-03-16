@@ -1,0 +1,73 @@
+graph TD
+    %% Main Application
+    A[main.py] --> B[App Initialization]
+    A --> C[Route Configuration]
+    
+    %% Core Modules
+    B --> D[Data Processing Module]
+    B --> E[Authentication Module]
+    
+    %% Data Flow
+    D --> D1[data_processing.py]
+    D1 --> D2[calculations.py]
+    D1 --> D3[CSV Data]
+    
+    %% Feature Modules
+    C --> F[Transaction Search Module]
+    C --> G[Financial Overview Module]
+    C --> H[Report Generation Module]
+    
+    %% Transaction Search Module
+    F --> F1[filters.py]
+    F --> F2[data_table.py]
+    F --> F3[search_callbacks.py]
+    F --> F4[transaction_search.py]
+    
+    %% Financial Overview Module
+    G --> G1[charts.py]
+    G --> G2[overview_dashboard.py]
+    G --> G3[overview_callbacks.py]
+    
+    %% Report Generation Module
+    H --> H1[export_tools.py]
+    H --> H2[reports.py]
+    H --> H3[report_callbacks.py]
+    H --> H4[export.py]
+    
+    %% UI Components
+    I[UI Components] --> F1
+    I --> F2
+    I --> G1
+    I --> H1
+    I --> J[header.py]
+    
+    %% Styling
+    K[assets/css/styles.css] --> F4
+    K --> G2
+    K --> H2
+    
+    %% User Interaction
+    L[User] --> F1
+    L --> G2
+    L --> H1
+    L --> J
+    
+    %% Data Output
+    F3 --> M[Filtered Transactions]
+    G3 --> N[Dashboard Visualizations]
+    H3 --> O[Generated Reports]
+    
+    %% Legend
+    classDef core fill:#f9d5e5,stroke:#333,stroke-width:1px
+    classDef feature fill:#eeeeee,stroke:#333,stroke-width:1px
+    classDef ui fill:#d5f9e8,stroke:#333,stroke-width:1px
+    classDef utility fill:#e8d5f9,stroke:#333,stroke-width:1px
+    classDef user fill:#f9e8d5,stroke:#333,stroke-width:1px
+    classDef output fill:#d5e8f9,stroke:#333,stroke-width:1px
+    
+    class A,B,C,D,D1,D2,D3,E core
+    class F,F1,F2,F3,F4,G,G1,G2,G3,H,H1,H2,H3,H4 feature
+    class I,J,K ui
+    class D2,H4 utility
+    class L user
+    class M,N,O output

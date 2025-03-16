@@ -1,0 +1,54 @@
+flowchart TD
+    %% Data Flow Diagram
+    subgraph "Data Layer"
+        CSV[financial_accounting.csv]
+        DataProcessing[data_processing.py]
+        Calculations[calculations.py]
+    end
+    
+    subgraph "Business Logic Layer"
+        SearchLogic[search_callbacks.py]
+        DashboardLogic[overview_callbacks.py]
+        ReportLogic[report_callbacks.py]
+        ExportLogic[export.py]
+    end
+    
+    subgraph "Presentation Layer"
+        Components[UI Components]
+        Layouts[Page Layouts]
+        Routes[App Routing]
+    end
+    
+    %% Connections
+    CSV --> DataProcessing
+    DataProcessing --> Calculations
+    DataProcessing --> SearchLogic
+    DataProcessing --> DashboardLogic
+    DataProcessing --> ReportLogic
+    
+    Calculations --> DashboardLogic
+    Calculations --> ReportLogic
+    
+    SearchLogic --> Components
+    DashboardLogic --> Components
+    ReportLogic --> Components
+    ReportLogic --> ExportLogic
+    
+    Components --> Layouts
+    Layouts --> Routes
+    
+    %% User Interaction
+    User[User] --> Routes
+    Routes --> SearchPage[Transaction Search]
+    Routes --> DashboardPage[Financial Overview]
+    Routes --> ReportPage[Report Generation]
+    
+    SearchPage --> SearchLogic
+    DashboardPage --> DashboardLogic
+    ReportPage --> ReportLogic
+    
+    ExportLogic --> CSV_Export[CSV Export]
+    ExportLogic --> PDF_Export[PDF Export]
+    
+    CSV_Export --> User
+    PDF_Export --> User

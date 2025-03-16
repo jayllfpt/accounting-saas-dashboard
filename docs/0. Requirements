@@ -1,0 +1,15 @@
+Use a prompt to split code to build a dashboard for an Accounting SaaS company. And give the explanation on how it was done.
+
+"Use a prompt to split code": 
+Nghĩa là bạn cần viết prompt để hướng dẫn AI (có thể là LLM như GPT-4, Gemini, Claude, hoặc một AI agent) tự động tạo ra và chia nhỏ code theo từng phần. 
+
+"to build a dashboard for an Accounting SaaS company": Dashboard này phục vụ một công ty SaaS về kế toán, tức là phải có các tính năng liên quan đến tài chính như: 
+•	Hiển thị doanh thu, chi phí, lợi nhuận
+•	Quản lý hóa đơn, dòng tiền
+•	Báo cáo tài chính
+•	Biểu đồ phân tích dữ liệu kế toán
+
+"And give the explanation on how it was done": Bạn cần giải thích cách đã thực hiện, bao gồm: 
+•	Cách viết prompt để chia nhỏ code
+•	AI sử dụng prompt như thế nào để tách code
+•	Tại sao lại chọn cách tiếp cận này

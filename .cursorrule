@@ -1,0 +1,5 @@
+1. luôn luôn phản hồi bằng tiếng Việt
+2. Dataset có các features sau:
+Date,Account,Description,Debit,Credit,Category,Transaction_Type,Customer_Vendor,Payment_Method,Reference
+3. Framework: Plotly dash + CSS
+4. OS: windows (Develop web trên windows)

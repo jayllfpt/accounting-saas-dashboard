@@ -1,0 +1,19 @@
+System Design for Accounting SaaS Dashboard
+1. Các Module Cần Thiết
+Dựa trên các tài liệu đã cung cấp (SRS, Source Code Structure và Implementation Plan), hệ thống cần có các module sau:
+1.1. Core Modules
+App Management Module: Quản lý khởi tạo, cấu hình và điều hướng ứng dụng
+Data Processing Module: Xử lý, biến đổi và tính toán dữ liệu tài chính
+Authentication Module: Xác thực và phân quyền người dùng
+1.2. Feature Modules
+Transaction Search Module: Tìm kiếm và lọc giao dịch (FR-04)
+Financial Overview Module: Hiển thị tổng quan tài chính (FR-01)
+Report Generation Module: Tạo và xuất báo cáo tài chính (FR-05)
+1.3. UI Modules
+Component Module: Các thành phần UI có thể tái sử dụng
+Layout Module: Bố cục trang cho từng tính năng
+Style Module: Định dạng và giao diện người dùng
+1.4. Utility Modules
+Export Module: Xuất dữ liệu sang các định dạng khác nhau (CSV, PDF)
+Calculation Module: Các hàm tính toán tài chính
+Configuration Module: Cấu hình và thiết lập hệ thống

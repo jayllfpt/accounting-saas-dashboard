@@ -1,0 +1,4 @@
+Account            , Description       , Debit , Credit, Category , Transaction_Type, Customer_Vendor, Payment_Method, Reference
+2023-08-21, Accounts Payable   , Transaction 1     , 112.56, 112.56, Asset    , Sale            , Customer 39    , Cash          ,     67471
+2023-08-13, Accounts Receivable, Transaction 2     , 775.86, 775.86, Revenue  , Purchase        , Customer 3     , Check         ,     92688
+2023-05-11, Accounts Receivable, Transaction 3     , 332.81, 332.81, Revenue  , Transfer        , Customer 36    , Check         ,     72066

@@ -1,0 +1,34 @@
+/
+├── main.py                      # Application entry point
+├── requirements.txt             # Project dependencies
+├── data/
+│   └── financial_accounting.csv # Your financial data
+├── assets/                      # Static assets (CSS, images, etc.)
+│   ├── css/
+│   │   └── styles.css           # Custom styling
+│   └── images/
+│       └── logo.png             # Dashboard logo
+├── components/                  # Reusable Dash components
+│   ├── __init__.py
+│   ├── header.py                # Header component with navigation
+│   ├── filters.py               # Transaction filtering components
+│   ├── data_table.py            # Interactive data table component
+│   ├── charts.py                # Chart components (bar, pie, line)
+│   └── export_tools.py          # Report export functionality
+├── layouts/                     # Page layouts
+│   ├── __init__.py
+│   ├── overview_dashboard.py    # Financial overview dashboard (FR-01)
+│   ├── transaction_search.py    # Transaction search page (FR-04)
+│   └── reports.py               # Financial reports page (FR-05)
+├── callbacks/                   # Dash callbacks
+│   ├── __init__.py
+│   ├── overview_callbacks.py    # Callbacks for overview dashboard
+│   ├── search_callbacks.py      # Callbacks for transaction search
+│   └── report_callbacks.py      # Callbacks for report generation
+├── utils/                       # Utility functions
+│   ├── __init__.py
+│   ├── data_processing.py       # Data loading and processing
+│   ├── calculations.py          # Financial calculations
+│   └── export.py                # CSV/PDF export utilities
+└── config/                      # Configuration files
+    └── settings.py              # App settings and constants

@@ -1,0 +1,63 @@
+classDiagram
+    class App {
+        +initialize()
+        +setup_routes()
+        +run_server()
+    }
+    
+    class DataProcessor {
+        +load_data()
+        +process_data()
+        +filter_data()
+        +transform_for_visualization()
+    }
+    
+    class FinancialCalculator {
+        +calculate_totals()
+        +calculate_profit_loss()
+        +calculate_trends()
+        +calculate_by_category()
+    }
+    
+    class TransactionSearch {
+        +create_filters()
+        +update_table()
+        +reset_filters()
+        +handle_search()
+    }
+    
+    class FinancialDashboard {
+        +create_summary_cards()
+        +create_charts()
+        +update_time_period()
+        +handle_drill_down()
+    }
+    
+    class ReportGenerator {
+        +create_report_config()
+        +generate_report()
+        +export_csv()
+        +export_pdf()
+    }
+    
+    class UIComponents {
+        +create_header()
+        +create_filters()
+        +create_data_table()
+        +create_charts()
+    }
+    
+    App --> DataProcessor
+    App --> UIComponents
+    DataProcessor --> FinancialCalculator
+    App --> TransactionSearch
+    App --> FinancialDashboard
+    App --> ReportGenerator
+    TransactionSearch --> DataProcessor
+    FinancialDashboard --> DataProcessor
+    FinancialDashboard --> FinancialCalculator
+    ReportGenerator --> DataProcessor
+    ReportGenerator --> FinancialCalculator
+    TransactionSearch --> UIComponents
+    FinancialDashboard --> UIComponents
+    ReportGenerator --> UIComponents

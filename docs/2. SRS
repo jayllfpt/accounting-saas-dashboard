@@ -1,0 +1,172 @@
+# 1. Giới thiệu
+
+## 1.1 Mục đích  
+Tài liệu SRS này mô tả các yêu cầu chức năng và phi chức năng của Dashboard trong hệ thống Accounting SaaS. Mục đích là định nghĩa phạm vi, tính năng và tiêu chuẩn mà hệ thống phải đáp ứng để phục vụ các vai trò khác nhau (nhân viên kế toán, CFO, quản trị viên, chuyên viên phân tích tài chính, nhân viên phụ trách thuế, nhân viên hỗ trợ kỹ thuật, quản lý vận hành, người dùng cuối) nhằm đảm bảo việc quản lý tài chính theo thời gian thực, tùy chỉnh giao diện, báo cáo và tích hợp dữ liệu hiệu quả.
+
+## 1.2 Phạm vi  
+Dashboard là giao diện trung tâm của hệ thống Accounting SaaS, cung cấp:
+- Tổng quan số liệu tài chính theo thời gian thực (doanh thu, chi phí, lợi nhuận, dòng tiền).
+- Các biểu đồ, KPIs tương tác cho CFO.
+- Quản lý phân quyền người dùng và nhật ký hoạt động cho quản trị viên.
+- Tính năng lọc, tìm kiếm giao dịch cho nhân viên kế toán.
+- Khả năng tạo, xuất báo cáo tài chính (CSV, PDF) cho chuyên viên phân tích.
+- Hiển thị thông tin thuế (mốc thời gian, hạn nộp thuế) cho nhân viên phụ trách thuế.
+- Hệ thống cảnh báo cho nhân viên hỗ trợ kỹ thuật.
+- Tùy chỉnh giao diện dashboard cho quản lý vận hành.
+- Truy cập linh hoạt từ desktop và thiết bị di động.
+
+## 1.3 Định nghĩa và Thuật ngữ  
+- **SaaS (Software as a Service):** Mô hình phân phối phần mềm qua internet dưới dạng dịch vụ.
+- **Dashboard:** Giao diện hiển thị số liệu, biểu đồ và các thông tin tổng hợp.
+- **KPIs:** Các chỉ số hiệu suất chính.
+- **API:** Giao diện lập trình ứng dụng giúp tích hợp dữ liệu giữa các hệ thống.
+- **User Story:** Mô tả ngắn gọn yêu cầu của người dùng.
+
+## 1.4 Đối tượng sử dụng  
+- Nhân viên kế toán  
+- CFO  
+- Quản trị viên hệ thống  
+- Chuyên viên phân tích tài chính  
+- Nhân viên phụ trách thuế  
+- Nhân viên hỗ trợ kỹ thuật  
+- Quản lý vận hành  
+- Người dùng cuối
+
+---
+
+# 2. Mô tả Tổng quan
+
+## 2.1 Quan điểm Sản phẩm  
+Dashboard là một thành phần của hệ thống Accounting SaaS được xây dựng theo mô hình web–based, cung cấp dữ liệu tài chính thời gian thực, báo cáo, cảnh báo và công cụ tùy chỉnh để hỗ trợ quản lý và ra quyết định trong doanh nghiệp.
+
+## 2.2 Chức năng Sản phẩm  
+- Hiển thị tổng hợp số liệu tài chính (doanh thu, chi phí, lợi nhuận, dòng tiền) theo thời gian thực.  
+- Cung cấp các biểu đồ, KPIs tương tác cho các nhà lãnh đạo (CFO).  
+- Hỗ trợ quản lý người dùng, phân quyền và xem nhật ký hoạt động (log).  
+- Cho phép lọc, tìm kiếm và phân tích chi tiết các giao dịch.  
+- Tạo và xuất báo cáo tài chính dưới dạng CSV và PDF.  
+- Hiển thị thông tin mốc thời gian và hạn nộp thuế, cùng số liệu tính thuế.  
+- Gửi thông báo cảnh báo khi phát hiện bất thường hoặc lỗi hệ thống.  
+- Cho phép tùy chỉnh giao diện dashboard (sắp xếp widget, chọn dữ liệu hiển thị).  
+- Hỗ trợ truy cập đa nền tảng (desktop, mobile).
+
+## 2.3 Giả định và Phụ thuộc  
+- Hệ thống phải có kết nối internet ổn định.  
+- Dashboard sẽ được tích hợp với các hệ thống kế toán, ngân hàng và ERP khác qua API.  
+- Người dùng có trình duyệt hiện đại và thiết bị hỗ trợ responsive design.
+
+---
+
+# 3. Yêu Cầu Hệ Thống
+
+## 3.1 Yêu Cầu Chức Năng
+
+### FR-01: Hiển thị tổng quan số liệu tài chính  
+- **Mô tả:** Dashboard hiển thị số liệu tổng hợp như doanh thu, chi phí, lợi nhuận và dòng tiền theo thời gian thực.  
+- **Người dùng:** Nhân viên kế toán, CFO, quản lý vận hành, người dùng cuối.  
+- **Tiêu chí chấp nhận:** Dữ liệu được cập nhật tự động, giao diện hiển thị rõ ràng, dễ đọc và trực quan.
+
+### FR-02: Dashboard tương tác cho CFO  
+- **Mô tả:** Cung cấp các biểu đồ và đồ thị tương tác hiển thị KPIs như tỷ lệ lợi nhuận, chi phí theo danh mục, xu hướng doanh thu theo tháng.  
+- **Người dùng:** CFO  
+- **Tiêu chí chấp nhận:** Biểu đồ tương tác có thể thao tác, lọc theo khoảng thời gian và hiển thị các chỉ số chính.
+
+### FR-03: Quản lý phân quyền và nhật ký hoạt động  
+- **Mô tả:** Quản trị viên có thể quản lý phân quyền người dùng và xem nhật ký hoạt động trên dashboard.  
+- **Người dùng:** Quản trị viên  
+- **Tiêu chí chấp nhận:** Hệ thống cho phép tạo/sửa/xóa người dùng, thiết lập quyền truy cập và ghi lại nhật ký chi tiết các hoạt động.
+
+### FR-04: Lọc và tìm kiếm giao dịch  
+- **Mô tả:** Cho phép nhân viên kế toán lọc và tìm kiếm giao dịch theo ngày, loại giao dịch hoặc tài khoản.  
+- **Người dùng:** Nhân viên kế toán  
+- **Tiêu chí chấp nhận:** Tìm kiếm chính xác, phản hồi nhanh và hiển thị kết quả phù hợp.
+
+### FR-05: Tạo và xuất báo cáo tài chính  
+- **Mô tả:** Cho phép chuyên viên phân tích tài chính tạo và xuất báo cáo chi tiết dưới dạng CSV hoặc PDF.  
+- **Người dùng:** Chuyên viên phân tích tài chính  
+- **Tiêu chí chấp nhận:** Báo cáo được tạo ra với dữ liệu chính xác, xuất ra định dạng chọn và cho phép lưu trữ/chia sẻ.
+
+### FR-06: Hiển thị thông tin thuế  
+- **Mô tả:** Hiển thị các mốc thời gian, hạn nộp thuế và số liệu tính thuế trên dashboard.  
+- **Người dùng:** Nhân viên phụ trách thuế  
+- **Tiêu chí chấp nhận:** Thông tin thuế được cập nhật đầy đủ, hiển thị trực quan và có thể cảnh báo khi gần hạn nộp thuế.
+
+### FR-07: Hệ thống cảnh báo (Alerts)  
+- **Mô tả:** Hệ thống gửi thông báo cảnh báo khi có bất thường trong giao dịch hoặc lỗi hệ thống.  
+- **Người dùng:** Nhân viên hỗ trợ kỹ thuật  
+- **Tiêu chí chấp nhận:** Thông báo được gửi kịp thời qua email, SMS hoặc thông báo trong ứng dụng.
+
+### FR-08: Tùy chỉnh giao diện dashboard  
+- **Mô tả:** Cho phép quản lý vận hành tùy chỉnh giao diện dashboard (sắp xếp widget, chọn dữ liệu hiển thị).  
+- **Người dùng:** Quản lý vận hành  
+- **Tiêu chí chấp nhận:** Người dùng có thể kéo thả, ẩn/hiện các widget và lưu cấu hình cá nhân.
+
+### FR-09: Hỗ trợ truy cập đa nền tảng  
+- **Mô tả:** Dashboard phải được thiết kế đáp ứng, cho phép truy cập từ cả desktop và thiết bị di động.  
+- **Người dùng:** Tất cả người dùng  
+- **Tiêu chí chấp nhận:** Giao diện hiển thị mượt mà trên các kích cỡ màn hình khác nhau và có trải nghiệm người dùng tốt.
+
+## 3.2 Yêu Cầu Phi Chức Năng
+
+### NFR-01: Hiệu suất  
+- Dashboard phải tải trong vòng 3 giây cho các hoạt động chính.  
+- Dữ liệu được cập nhật theo thời gian thực hoặc với khoảng cách tối đa 1 phút.
+
+### NFR-02: Bảo mật  
+- Hệ thống phải sử dụng xác thực đa yếu tố cho người dùng.  
+- Dữ liệu phải được mã hóa khi truyền tải và lưu trữ.  
+- Nhật ký hoạt động phải được ghi lại đầy đủ để phục vụ mục đích kiểm tra.
+
+### NFR-03: Khả năng mở rộng  
+- Hệ thống phải có khả năng mở rộng để hỗ trợ số lượng lớn người dùng và giao dịch ngày càng tăng.
+
+### NFR-04: Độ tin cậy và khả năng phục hồi  
+- Hệ thống phải đảm bảo uptime tối thiểu 99.9%.  
+- Có cơ chế backup và phục hồi dữ liệu tự động.
+
+### NFR-05: Tương thích và đáp ứng  
+- Dashboard phải tương thích với các trình duyệt hiện đại (Chrome, Firefox, Edge, Safari).  
+- Phải hỗ trợ thiết kế responsive cho thiết bị di động.
+
+### NFR-06: Tính dễ sử dụng  
+- Giao diện người dùng phải trực quan, dễ hiểu và dễ thao tác cho người dùng thuộc các cấp khác nhau.  
+- Cung cấp tài liệu hướng dẫn và hỗ trợ trực tuyến.
+
+---
+
+# 4. Giao Diện và Tích Hợp Hệ Thống
+
+## 4.1 Giao diện người dùng  
+- Thiết kế dashboard theo phong cách hiện đại, trực quan với các widget có thể tùy chỉnh.  
+- Sử dụng biểu đồ, đồ thị và bảng số liệu tương tác để hiển thị thông tin tài chính.
+
+## 4.2 Tích hợp với hệ thống khác  
+- Dashboard sẽ tích hợp qua API với các hệ thống kế toán, ngân hàng, ERP và các dịch vụ bên thứ ba khác để nhập liệu tự động và đồng bộ hóa thông tin.
+
+---
+
+# 5. Các Yêu Cầu Khác
+
+## 5.1 Tài liệu và Hỗ trợ  
+- Cung cấp tài liệu hướng dẫn sử dụng chi tiết cho từng nhóm người dùng.  
+- Hỗ trợ kỹ thuật 24/7 qua email, hotline hoặc chat trực tuyến.
+
+## 5.2 Đào tạo  
+- Tổ chức các buổi đào tạo định kỳ cho người dùng mới và cập nhật cho người dùng hiện tại khi có thay đổi về giao diện hoặc tính năng.
+
+## 5.3 Pháp lý và Tuân thủ  
+- Đảm bảo tuân thủ các quy định về bảo mật, lưu trữ dữ liệu và báo cáo tài chính theo chuẩn mực kế toán hiện hành.
+
+---
+
+# 6. Phụ Lục
+
+## 6.1 Glossary (Thuật ngữ)  
+- **Dashboard:** Giao diện tổng hợp hiển thị số liệu và báo cáo.  
+- **KPIs:** Các chỉ số hiệu suất chính.  
+- **API:** Giao diện lập trình ứng dụng dùng để tích hợp dữ liệu giữa các hệ thống.  
+- **SaaS:** Phần mềm dưới dạng dịch vụ.
+
+## 6.2 Tham khảo  
+- Các tiêu chuẩn báo cáo tài chính hiện hành.  
+- Tài liệu hướng dẫn tích hợp API từ các đối tác ngân hàng và ERP.
