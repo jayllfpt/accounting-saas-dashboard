@@ -1,6 +1,6 @@
 # Accounting SaaS Dashboard
 
-## This is an assignment that I applied for a Prompt Engineering position. Take a look at [my submission](docs/Submission/subbmission.MD)
+## ❗ This is an assignment that I applied for a Prompt Engineering position. Take a look at [my submission](docs/subbmission.MD)
 
 ## Overview
 
