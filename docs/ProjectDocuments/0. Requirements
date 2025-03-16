@@ -1,0 +1,18 @@
+Use a prompt to split code to build a dashboard for an Accounting SaaS company. And give an explanation of how it was done.
+
+"Use a prompt to split code"
+This means you need to write a prompt that guides an AI (such as an LLM like GPT-4, Gemini, Claude, or an AI agent) to automatically generate and split the code into different components.
+
+"To build a dashboard for an Accounting SaaS company"
+The dashboard is designed for an accounting-focused SaaS company, so it must include financial-related features such as:
+
+Displaying revenue, expenses, and profits
+Managing invoices and cash flow
+Financial reporting
+Accounting data visualization with charts
+"And give the explanation on how it was done"
+You need to explain the process, including:
+
+How the prompt was written to split the code
+How the AI uses the prompt to segment the code
+Why this approach was chosen

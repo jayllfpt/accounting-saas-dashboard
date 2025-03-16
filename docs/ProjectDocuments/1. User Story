@@ -1,0 +1,9 @@
+As an accountant, I want to view an overview of financial metrics (revenue, expenses, profit, and cash flow) on the dashboard so that I can monitor the company's financial situation in real-time.
+As a CFO, I want to see interactive charts and a dashboard displaying key performance indicators (KPIs) such as profit margin, category-wise expenses, and monthly revenue trends to make timely strategic decisions.
+As an administrator, I want to manage user permissions and view the activity log on the dashboard to ensure that only authorized individuals can access sensitive data.
+As an accountant, I want to filter and search transactions by date, transaction type, or account so that I can review details and analyze necessary items.
+As a financial analyst, I want to generate and export detailed financial reports (in CSV, PDF format) from the dashboard to share information with stakeholders.
+As a tax officer, I want to display tax deadlines, due dates, and tax calculation data to assist in reporting and tax preparation.
+As a technical support staff, I want to receive alert notifications when there are unusual transactions or system errors to promptly handle them and ensure stable operations.
+As an operations manager, I want the ability to customize the dashboard interface (arrange widgets, select displayed data) to focus on the metrics that matter most to me.
+As a user, I want to access the dashboard on both mobile and desktop devices so that I can monitor financial data anytime, anywhere with an internet connection.
