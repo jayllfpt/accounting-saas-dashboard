@@ -63,7 +63,7 @@ accounting-saas-dashboard/
 
 3. Run the application:
    ```
-   python main.py
+   python app.py
    ```
 
 4. Open your web browser and navigate to:

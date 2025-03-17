@@ -6,7 +6,7 @@ from unittest.mock import patch, MagicMock
 # Add the parent directory to the path so we can import the modules
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-import main
+import app
 from dash import html
 
 class TestMain(unittest.TestCase):
@@ -18,7 +18,7 @@ class TestMain(unittest.TestCase):
         mock_load_financial_data.return_value = mock_df
         
         # Execute
-        result = main.get_data()
+        result = app.get_data()
         
         # Assert
         mock_load_financial_data.assert_called_once()
@@ -26,15 +26,15 @@ class TestMain(unittest.TestCase):
     
     def test_display_page(self):
         # Test with transactions path
-        result_transactions = main.display_page('/transactions')
+        result_transactions = app.display_page('/transactions')
         self.assertIsInstance(result_transactions, html.Div)
         
         # Test with default path
-        result_default = main.display_page('/')
+        result_default = app.display_page('/')
         self.assertIsInstance(result_default, html.Div)
         
         # Test with unknown path
-        result_unknown = main.display_page('/unknown')
+        result_unknown = app.display_page('/unknown')
         self.assertIsInstance(result_unknown, html.Div)
 
 if __name__ == '__main__':

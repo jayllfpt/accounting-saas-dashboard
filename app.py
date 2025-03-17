@@ -24,6 +24,7 @@ app = dash.Dash(
     ],
     suppress_callback_exceptions=True  # Important for multi-page apps
 )
+server = app.server 
 
 # Define app layout with URL routing
 app.layout = html.Div([
